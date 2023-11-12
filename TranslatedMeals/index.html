@@ -5,20 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
     <title>Translated Meals 🌎</title>
 </head>
 <body>
     <div class="container">
         <div class="row">
-            <img src="" alt="">
+            <div class="col-12 text-center">
+                <span class="logo">Translated Meals 🌎</span>
+            </div>
         </div>
 
-        <div class="row align-items-center">
-            <form class="form-inline">
-                <input class="form-control mr-sm-2" id="recipeSearch" type="search" placeholder="Search for a recipe ..." aria-label="Search">
-                
-                <div class="dropdown bg-primary">
-                    <button class="btn btn-secondary dropdown-toggle bg-primary" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="row search-bar-container">
+            <form class="form-outline search-bar">
+                <input class="form-control mr-sm-2 text-center" id="recipeSearch" type="search" placeholder="🔍 Search for a recipe ..." aria-label="Search">
+                <span class="clear-button" onclick="clearSearch()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg mt-2" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                </span>
+            </form>
+
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         EN
                     </button>
                 
@@ -32,11 +42,11 @@
                         <a class="dropdown-item" href="#" data-language="ja">Japanese</a>
                         <a class="dropdown-item" href="#" data-language="zh">Chinese</a>
                     </div>
-                </div>                
-            </form>
+                </div>
+            </div>
         </div>
 
-        <div class="row" id="recipeCards"></div>
+        <div class="row my-3" id="recipeCards"></div>
 
     </div>
 

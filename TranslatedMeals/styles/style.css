@@ -1,14 +1,68 @@
-*{
-    margin: 0;
-    padding: 0;
-}
-
 body {
     background-color: #f8f9fa;
 }
 
-.container {
-    margin-top: 20px;
+.logo {
+    font-size: 80px;
+    font-weight: bold;
+    color: #007bff;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    flex: 1;
+    margin-right: 10px;
+    position: relative;
+}
+
+.clear-button {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    display: none;
+}
+
+.clear-button:hover {
+    color: #007bff;
+}
+
+.dropdown-container {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    margin-left: auto;
+}
+
+.dropdown-toggle {
+    background-color: #007bff;
+    border: none;
+}
+
+.dropdown-toggle:hover {
+    background-color: #0056b3;
+}
+
+.dropdown-menu {
+    min-width: 80px;
+}
+
+.dropdown-item {
+    color: #007bff;
+}
+
+.dropdown-item:hover {
+    background-color: #007bff;
+    color: #fff;
 }
 
 #recipeCards .card {
@@ -16,8 +70,12 @@ body {
 }
 
 .card-img-top {
-    max-height: 200px;
+    max-height: 30vh;
+    max-width: 30vh;
     object-fit: cover;
+    margin: 2%;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgb(83, 83, 83);
 }
 
 .card-body {
@@ -43,4 +101,30 @@ body {
 
 .read-more-link:hover {
     text-decoration: none;
+}
+
+#recipeSearch, #dropdownMenuButton{
+    height: 5vh;
+}
+
+.ingredient-div{
+    margin-bottom: 1.5%;
+}
+
+.ingredient-item{
+    min-height: 8vh;
+}
+
+
+
+@media (max-width: 1024px) {
+    .logo {
+        font-size: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo {
+        font-size: 30px;
+    }
 }
