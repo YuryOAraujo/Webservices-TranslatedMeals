@@ -24,7 +24,7 @@ function updateContainerMarginTop(hasSearchResults) {
 }
 
 $(document).ready(function () {
-    const googleTranslateApiKey = 'YOUR_GOOGLE_API_KEY';
+    const googleTranslateApiKey = 'AIzaSyA6S9LAB-j7YsPHQi1TibssrSMXD13q8BQ';
     let selectedLanguage = 'en'
     let recipe = ''
     const separator = '---'
