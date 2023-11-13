@@ -12,19 +12,19 @@ document.getElementById('recipeSearch').addEventListener('input', function () {
 })
 
 function updateContainerMarginTop(hasSearchResults) {
-    const container = document.querySelector('.container');
-    const initialMarginTop = 30;
-    const reducedMarginTop = 5;
+    const container = document.querySelector('.container')
+    const initialMarginTop = 30
+    const reducedMarginTop = 5
 
     if (hasSearchResults) {
-        container.style.marginTop = `${reducedMarginTop}vh`;
+        container.style.marginTop = `${reducedMarginTop}vh`
     } else {
-        container.style.marginTop = `${initialMarginTop}vh`;
+        container.style.marginTop = `${initialMarginTop}vh`
     }
 }
 
 $(document).ready(function () {
-    const googleTranslateApiKey = 'AIzaSyA6S9LAB-j7YsPHQi1TibssrSMXD13q8BQ';
+    const googleTranslateApiKey = 'YOUR_GOOGLE_API_KEY';
     let selectedLanguage = 'en'
     let recipe = ''
     const separator = '---'
