@@ -1,3 +1,30 @@
+const languageTexts = {
+    en: {
+      watchOnYoutube: 'Watch on YouTube',
+      ingredients: 'Ingredients',
+    },
+    es: {
+      watchOnYoutube: 'Ver en YouTube',
+      ingredients: 'Ingredientes',
+    },
+    pt: {
+      watchOnYoutube: 'Assistir no YouTube',
+      ingredients: 'Ingredientes',
+    },
+    it: {
+      watchOnYoutube: 'Guarda su YouTube',
+      ingredients: 'Ingredienti',
+    },
+    ja: {
+      watchOnYoutube: 'YouTube で見る',
+      ingredients: '材料',
+    },
+    zh: {
+      watchOnYoutube: '在 YouTube 上观看',
+      ingredients: '成分',
+    },
+  }
+
 function clearSearch() {
     document.getElementById('recipeSearch').value = ''
     document.getElementById('recipeCards').innerHTML = ''
@@ -29,6 +56,17 @@ $(document).ready(function () {
     let recipe = ''
     const separator = '---'
     let recipeList = []
+
+    let modalShown = false
+
+    function showProjectModal() {
+        $('#projectModal').modal('show')
+        modalShown = true
+    }
+
+    if (!modalShown) {
+        showProjectModal()
+    }
 
     function Recipe(name, instructions, ingredientList, image, youtubeLink) {
         this.name = name
@@ -105,6 +143,7 @@ $(document).ready(function () {
     }
 
     function createRecipeCard(recipes) {
+        const texts = languageTexts[selectedLanguage]
         document.getElementById('recipeCards').innerHTML = ''
     
         recipes.forEach(recipe => {
@@ -116,21 +155,21 @@ $(document).ready(function () {
                     <div class="col-sm-4">
                         <img src="${recipe.image}" class="card-img-top" alt="${recipe.name}">
                     </div> 
-    
+
                     <div class="col-sm-8">
                         <div class="card-body">
                             <div class="d-flex justify-content-between flex-column flex-md-row">
                                 <h1 class="card-title">${recipe.name}</h1>
                                 <a target="_blank" href="${recipe.youtubeLink}">
-                                    <button class="btn btn-danger my-2">Watch on YouTube</button>
+                                    <button class="btn btn-danger my-2">${texts.watchOnYoutube}</button>
                                 </a>
                             </div>
                             <p class="card-text" id="${recipe.name}-instructions">${recipe.instructions}</p>
                         </div>
                     </div>
                 </div>
-    
-                <h4 class="mt-5 text-center">Ingredients</h4>
+
+                <h4 class="mt-5 text-center">${texts.ingredients}</h4>
                 <div class="row">
                     ${recipe.ingredientList.map(ingredient => `
                         <div class="list-group col-sm-12 col-md-6 col-lg-3 ingredient-div">
@@ -146,9 +185,6 @@ $(document).ready(function () {
             document.getElementById('recipeCards').appendChild(card);
         })
     }
-    
-    
-    
 
     function translateText(text, callback, source, target = 'en') {
         $.ajax({

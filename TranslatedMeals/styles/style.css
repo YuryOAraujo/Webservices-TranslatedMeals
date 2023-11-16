@@ -115,11 +115,14 @@ body {
     min-height: 8vh;
 }
 
-
-
 @media (max-width: 1024px) {
     .logo {
         font-size: 60px;
+    }
+
+    .youtube-frame iframe{
+        width: 90%;
+        height: calc(90% / 16 * 8);
     }
 }
 
@@ -127,4 +130,5 @@ body {
     .logo {
         font-size: 30px;
     }
+
 }
