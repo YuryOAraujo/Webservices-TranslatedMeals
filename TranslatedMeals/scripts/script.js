@@ -220,13 +220,9 @@ $(document).ready(function () {
             recipe = $(this).val()
             if (recipe !== '') {
                 updateContainerMarginTop(true)
-                if (selectedLanguage.match('en')) {
-                    fetchRecipes(recipe)
-                } else {
                     translateText(recipe, translateText => {
                         fetchRecipes(translateText)
                     }, selectedLanguage)
-                }
             }
         }
     })
